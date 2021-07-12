@@ -6,6 +6,8 @@
 - Added touchstart
 - Minor CSS change
 - Variable change
+- Exponent calculator
+- Root calculator rounds off to the nearest number
 -->
 <html>
     <head>
@@ -62,9 +64,11 @@
          <li><a href="#how1">How to use the general calculator?</a></li>   
          <li><a href="#how2">How to use the many addends calculator?</a></li>
          <li><a href="#how3">How to use the root calculator?</a></li>
+         <li><a href="#how4">How to use the exponent calculator?</a></li>
          <li><a href="#calculator1">General Calculator</a></li>
          <li><a href="#calculator2">Many Addends Calculator</a></li>
          <li><a href="#calculator3">Root Calculator</a></li>
+         <li><a href="#calculator4">Exponent</a></li>
      </ul>
 <!-------------------------------------------------------------->
      <p id="about1"><span class="text">About:</span><br>
@@ -87,6 +91,12 @@
      <h2 class="text" id="how3">How to use the root calculator?</h2>
      <ol>
          <li>Type the root (square root = 2, cube root = 3, etc.)</li>
+         <li>Type a number.</li>
+         <li>Click "Calculate".</li>
+     </ol>
+     <h2 class="text" id="how4">How to use the exponent calculator?</h2>
+     <ol>
+         <li>Type the exponent.</li>
          <li>Type a number.</li>
          <li>Click "Calculate".</li>
      </ol>
@@ -123,6 +133,14 @@
      <input type="number" id="bigsmol1"><br><br>
      <button id="calculate3">Calculate</button>
      <div id="answer3"></div>
+<!-------------------------------------------------------------->
+<h2 class="text" id="calculator4">Exponent Calculator</h2>
+     <h3>Exponent</h3>
+     <input type="number" id="exponent1">
+     <h3>Number</h3>
+     <input type="number" id="bigsmol2"><br><br>
+     <button id="calculate4">Calculate</button>
+     <div id="answer4"></div>
 <!-------------------------------------------------------------->
      <script>
      //button code for the general calculator
@@ -167,18 +185,31 @@
              var root = document.getElementById("root1").value;
              var bigsmol1 = document.getElementById("bigsmol1").value
              var answer3 = document.getElementById("answer3");
-             answer3.innerHTML = Math.pow(bigsmol1, 1/root)
+             answer3.innerHTML = Math.pow(bigsmol1, 1/root).toFixed(0)
              if (answer3.innerHTML === "NaN"){
                  answer3.innerHTML = "Error, please add/change values to continue"
              
              } 
              if (bigsmol1<0){
-                 answer3.innerHTML = "-" + Math.pow(bigsmol1-(2*bigsmol1), 1/root)
+                 answer3.innerHTML = "-" + Math.pow(bigsmol1-(2*bigsmol1), 1/root).toFixed(0)
              } 
+             
          };
          calculate3.addEventListener("click", calculate3click)
          calculate3.addEventListener("touchstart", calculate3click) 
-       
+     //button code for exponent calculator
+     var calculate4 = document.getElementById("calculate4");
+     var calculate4click = function(){
+         var exponent1 = document.getElementById("exponent1").value;
+         var bigsmol2 = document.getElementById("bigsmol2").value;
+         var answer4 = document.getElementById("answer4");
+         answer4.innerHTML = Math.pow(bigsmol2, exponent1)
+         if(answer4.innerHTML === "NaN"){
+             answer4.innerHTML = "Error, please add/change values to continue"
+         }
+     }
+     calculate4.addEventListener("click", calculate4click)
+     calculate4.addEventListener("touchstarat", calculate4click)
      </script>
    
 
