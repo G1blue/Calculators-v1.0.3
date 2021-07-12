@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!-- Made By: G1blue -->
 <!-- This project will showcase all calculators that I did, doing, and will do. I will now put all updates in calculators here. -->
-<!-- Changelog -->
+<!-- Changelog 
+7/12/2021
+- Added touchstart
+-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -142,6 +145,7 @@
              }
          };
          calculate.addEventListener("click", calculateclick)
+         calculate.addEventListener("touchstart", calculateclick)
          
          //button code for many addends calculator
          var calculate1 = document.getElementById("calculate2");
@@ -155,6 +159,7 @@
              }
          };
          calculate1.addEventListener("click", calculate1click)
+         calculate1.addEventListener("touchstart", calculateclick)
         
          
          var calculate2 = document.getElementById("calculate3");
@@ -172,6 +177,7 @@
              } 
          };
          calculate2.addEventListener("click", calculate2click)
+         calculate2.addEventListener("touchstart", calculateclick)
      </script>
    
 
