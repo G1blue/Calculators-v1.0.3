@@ -8,6 +8,8 @@
 - Variable change
 - Exponent calculator
 - Root calculator rounds off to the nearest number
+7/15/21
+- Root calculator rounds off to two decimal places
 -->
 <html>
     <head>
@@ -126,7 +128,7 @@
      <button id="calculate2">Calculate</button>
      <div id="answer2"></div>
 <!-------------------------------------------------------------->
-     <h2 class="text" id="calculator3">Root Calculator</h2>
+     <h2 class="text" id="calculator3">Root Calculator (Rounds to 2 decimal places)</h2>
      <h3>Root</h3>
      <input type="number" id="root1">
      <h3>Number</h3>
@@ -166,6 +168,7 @@
          };
          calculate1.addEventListener("click", calculate1click)
          calculate1.addEventListener("touchstart", calculate1click)
+         
          //button code for many addends calculator
          var calculate2 = document.getElementById("calculate2");
          var calculate2click = function(){
@@ -179,13 +182,14 @@
          };
          calculate2.addEventListener("click", calculate2click)
          calculate2.addEventListener("touchstart", calculate2click)
+         
          //button code for root calculator
          var calculate3 = document.getElementById("calculate3");
          var calculate3click = function(){
              var root = document.getElementById("root1").value;
              var bigsmol1 = document.getElementById("bigsmol1").value
              var answer3 = document.getElementById("answer3");
-             answer3.innerHTML = Math.pow(bigsmol1, 1/root).toFixed(0)
+             answer3.innerHTML = Math.pow(bigsmol1, 1/root).toFixed(2)
              if (answer3.innerHTML === "NaN"){
                  answer3.innerHTML = "Error, please add/change values to continue"
              
@@ -197,7 +201,8 @@
          };
          calculate3.addEventListener("click", calculate3click)
          calculate3.addEventListener("touchstart", calculate3click) 
-     //button code for exponent calculator
+     
+         //button code for exponent calculator
      var calculate4 = document.getElementById("calculate4");
      var calculate4click = function(){
          var exponent1 = document.getElementById("exponent1").value;
