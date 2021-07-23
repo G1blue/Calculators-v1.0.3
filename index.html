@@ -47,6 +47,13 @@
             input {
                 font-family: monospace;
             }
+            #time {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width: 17%;
+                font-family: monospace;
+            }
         </style>
     </head>
     <body>
@@ -135,6 +142,8 @@
      <button id="calculate4">Calculate</button>
      <div id="answer4"></div>
 <!-------------------------------------------------------------->
+<h2 id="time"></h2>
+<!-------------------------------------------------------------->
      <script>
      //button code for the general calculator
          var calculate1 = document.getElementById("calculate1");
@@ -206,6 +215,40 @@
      }
      calculate4.addEventListener("click", calculate4click)
      calculate4.addEventListener("touchstart", calculate4click)
+         //js for date
+        
+    function t() {
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    document.getElementById('time').innerHTML = h + ":" + m + ":" + s
+    if(s<10){
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + "0" + s
+    }
+    else if(m<10){
+        document.getElementById('time').innerHTML = h + ":" + "0" + m + ":" + s
+    }
+    else if(h<10){
+        document.getElementById('time').innerHTML = "0" + h + ":" + m + ":" + s
+    }
+        if(s<10 && m<10){
+        document.getElementById('time').innerHTML = h + ":" + "0" + m + ":" + "0" + s
+    }
+    else if(s<10 && h<10){
+        document.getElementById('time').innerHTML = "0" + h + ":" + m + ":" + "0" + s
+    }
+    else if(m<10 && h<10){
+        document.getElementById('time').innerHTML =  "0" + h + ":" + "0" + m + ":" +  s
+    }
+    else if(m<10 && h<10 && s<10){
+        document.getElementById('time').innerHTML = "0" + h + ":" + "0" + m + ":" + "0" + s
+    }
+    
+    }
+     t();
+     window.setInterval(t, 1000);
+
      </script>
    
 
