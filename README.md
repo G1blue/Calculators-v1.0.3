@@ -16,3 +16,7 @@ Changelog:
 - Changelog to changelog.html
 - Minor issues fixed
 
+- December 6, 2021
+- Finally deleted changelog.html
+- Probably gonna add this to Calculators v2.0
+
